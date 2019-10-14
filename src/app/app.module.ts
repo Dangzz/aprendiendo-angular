@@ -2,12 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MiComponenteComponent } from './mi-componente/mi-componente.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MiComponenteComponent
+    HeaderComponent,
+    SliderComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
