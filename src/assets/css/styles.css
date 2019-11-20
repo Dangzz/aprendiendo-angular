@@ -450,3 +450,18 @@ textarea{
      padding-top: 35px;
   }
 }
+
+
+.year-green {
+  display: block;
+  background: green;
+  color: white;
+  padding: 5 px;
+}
+
+.year-red {
+  display: block;
+  background: red;
+  color: white;
+  padding: 5 px;
+}
