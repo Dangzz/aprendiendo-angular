@@ -1,44 +1,48 @@
-<h1 class="subheader">Peliculas</h1>
-<hr>
+<app-slider [nombre]="'Peliculas'" [size]="'small'">
 
-<h2>Mostrar 1 pelicula</h2>
-{{peliculas[0].titulo}}
+</app-slider>
 
-<hr>
+<div class="center">
+    <section id="content">
 
-<h2>Numero de peliculas</h2>
+        <h1 class="subheader">Peliculas</h1>
+        <hr>
 
-<div *ngIf="peliculas.length <= 3">
-    <h4>Hay pocas peliculas</h4>
-</div>
+        <h2>Mostrar 1 pelicula</h2>
+        {{peliculas[0].titulo}}
 
-<div *ngIf="peliculas.length > 3">
-    <h4>Hay muchas peliculas</h4>
-</div>
-{{peliculas.length}}
+        <hr>
 
-<hr>
+        <h2>Numero de peliculas</h2>
 
-<h2 class="subheader">Listado de Peliculas</h2>
-
-<div  *ngIf="peliculas">
-    <article class="article-item" *ngFor="let pelicula of peliculas; let i = index;">
-        <div class="image-wrap">
-            <img src="{{pelicula.image}}" alt="{{pelicula.titulo}}" />
+        <div *ngIf="peliculas.length <= 3">
+            <h4>Hay pocas peliculas</h4>
         </div>
 
-        <h2> {{i + 1}}  {{pelicula.titulo}}</h2>
-        <span class="date">
-            Hace 5 minutos
-        </span>
-        <span class="year" [ngClass]="{ 'year-green': pelicula.year >= 2016, 'year-red': pelicula.year < 2016 }">
-            {{pelicula.year}}
-        </span>
-        <a href="#">Leer más</a>
+        <div *ngIf="peliculas.length > 3">
+            <h4>Hay muchas peliculas</h4>
+        </div>
+        {{peliculas.length}}
 
-        <div class="clearfix"></div>
-    </article>
+        <hr>
 
-    <!--AÑADIR ARTICULOS VIA JS-->
+        <h2 class="subheader">Listado de Peliculas</h2>
 
+        <div *ngIf="peliculas">
+
+            <div *ngFor="let pelicula of peliculas; let i = index;">
+                <app-pelicula [pelicula]="pelicula">
+
+                </app-pelicula>
+            </div>
+
+
+
+            <!--AÑADIR ARTICULOS VIA JS-->
+
+        </div>
+
+    </section>
+
+    <app-sidebar></app-sidebar>
 </div>
