@@ -8,7 +8,8 @@ import { Pelicula } from '../../models/pelicula.model';
 })
 export class PeliculasComponent implements OnInit {
 
-  public peliculas: Array<Pelicula>;
+  public peliculas: Pelicula[];
+  public favorita: Pelicula;
 
   constructor() {
     this.getMovies();
@@ -27,6 +28,10 @@ export class PeliculasComponent implements OnInit {
       new Pelicula('Back to the future', 2010, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPUQ0DZ_4y4GlK1fzKeOMzPeAed8IgJakKjchbZb4ngkRNihL1'),
       new Pelicula('Lion King', 2016, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJwrrD3K1_oKzR9MYSvgFVs4RHBFrmWELvsC9RILag22QpIi9y')
     ];
+  }
+
+  mostrarFavorita(event){
+    this.favorita = event.pelicula;
   }
 
 }
