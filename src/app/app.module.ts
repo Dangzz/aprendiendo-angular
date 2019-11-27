@@ -15,6 +15,8 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { from } from 'rxjs';
 import { ErrorComponent } from './components/error/error.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { EsParPipe } from './pipes/espar.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
     PaginaComponent,
     PeliculasComponent,
     ErrorComponent,
-    PeliculaComponent
+    PeliculaComponent,
+    EsParPipe
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
